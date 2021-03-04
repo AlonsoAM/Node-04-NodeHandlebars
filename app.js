@@ -13,28 +13,28 @@ app.set('view engine', 'hbs')
 
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
-  res.render('home', {
-    nombre: 'AlonsoAM',
-    titulo: 'Curos de NodeJS',
-  })
-})
+// app.get('/', (req, res) => {
+//   res.render('home', {
+//     nombre: 'AlonsoAM',
+//     titulo: 'Curos de NodeJS',
+//   })
+// })
 
-app.get('/generic', (req, res) => {
-  res.render('generic', {
-    nombre: 'AlonsoAM',
-    titulo: 'Curos de NodeJS',
-  })
-})
+// app.get('/generic', (req, res) => {
+//   res.render('generic', {
+//     nombre: 'AlonsoAM',
+//     titulo: 'Curos de NodeJS',
+//   })
+// })
 
-app.get('/elements', (req, res) => {
-  res.render('elements', {
-    nombre: 'AlonsoAM',
-    titulo: 'Curos de NodeJS',
-  })
-})
+// app.get('/elements', (req, res) => {
+//   res.render('elements', {
+//     nombre: 'AlonsoAM',
+//     titulo: 'Curos de NodeJS',
+//   })
+// })
 app.get('*', (req, res) => {
-  res.send('404 | Page Not Found')
+  res.sendFile(__dirname + '/public/index.html')
 })
 
 app.listen(port, () => {
